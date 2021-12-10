@@ -76,6 +76,7 @@ library("ggplot2") # load ggplot2 to make tutorial graphs
 ***
 ### Pro tip 1: Personalize your Rstudio theme
 Boost your confidence by switching your background to black and text color to flashy green; This'll make you feel like Neo from _The Matrix_ and give people the impression you are some sort of coding wizard. What's more, it's much easier on the eyes when you're coding in the dark at 3am (don't tell me it's never happened-we've all been there). To do this, go to `Tools` in the Menu bar, and select `Global options/appearance` and set the editor theme to `Gob`.![neo](https://user-images.githubusercontent.com/91272449/145554929-02627af6-ac00-4708-9de6-10d9762cd0c8.jpg)
+
 ***
 
 Load and read the file `ant_data1.csv`. Have a look at what the data consists of using the `head`, `view` and `summary` functions. The data set is from a study investigating foraging efficiency of Red Wood ant colonies under different tree species. As you can see, this data set has two variables; "Food and "Tree".  The "tree" column  is of the  character type, and has three possible category entries; Rowan, Oak and Sycamore. The "food"" column, contains continuous numeric values, which represent food collection rates in units of dry biomass (mg)/per ant leaving a given tree, measured over a 30 minute period. 
@@ -261,6 +262,7 @@ Note that the `log()` function transforms your data using the natural logarithm,
 A simple log transformation as described above will not work if the transformed value is 0, as we cannot get the logarithm of 0. This will return an "NA", which is not dramatic if you only have a few zeroes in your data and your sample size is large. This becomes an issue when we are working with population/count-abundance data, which is often full of zeroes.
 
 This issue can be overcome by adding a constant to your variable before log transformation, such as 1. In this way, all zero values  will become 1, and the transformation becomes __log(x+1)__.
+
 ***
 
 ### 2. Square Root transformation
@@ -333,8 +335,8 @@ your_data$new_variable = log (p / (100 - p)) # where p is the original variable 
 
 ***
 ### Pro tip 3: MUSIC
-Having trouble staying focused? Ambulance sirens outside, flatmate on a call with a friend, neighbour hoovering the room right above your head...are all these sounds distracting you? Consider drowning out all these noises by playing some music nice and loud. Avoid playing very lyric heavy/melodic songs as these may distract you even more. The author's favorites are groovy 80s love songs and portuguese rap (if you don't speak the language, you won't understand it and won't be able to sing it so it probably won't distract you)
-. 
+Having trouble staying focused? Ambulance sirens outside, flatmate on a call with a friend, neighbour hoovering the room right above your head...are all these sounds distracting you? Consider drowning out all these noises by playing some music nice and loud. Avoid playing very lyric heavy/melodic songs as these may distract you even more. The author's favorites are groovy 80s love songs and portuguese rap (if you don't speak the language, you won't understand it and won't be able to sing it so it probably won't distract you).
+
 ***
 <a name="step 2-2"></a>
 ### Step: 2 Back transforming data
@@ -435,7 +437,7 @@ The adjusted R-squared value is approximately 0.14. This means that the differen
 
 Now looking further up we have our coefficients, which are the three tree species investigated. Notice that we can't see Oak mentionned anywhere. This is because Oak is actually represented by the intercept row, and the two other tree species have their estimates expressed relative to oak. 
 
-The Pr(>|t|) column shows individual p-values for each category (in our case, tree species). We can see that anr foraging efficiency in oak and Rowan differs significantly, but that the foraging efficiency of ant on Sycamore is not significantly different to the other species.
+The Pr>t column shows individual p-values for each category (in our case, tree species). We can see that ant foraging efficiency in oak and Rowan differs significantly, but that the foraging efficiency of ant on Sycamore is not significantly different to the other species.
 
 The last thing we have to do is to back-transform our coefficient estimates to relate these to our original units of foraging efficiency; mg of dry biomass/ant. To do so, we need to exponentiate our coefficient estimates. This means raising e to the power of the model estimate. This can be done with the `exp()` function.
 
@@ -445,7 +447,7 @@ The other estimates are expressed relative to the intercept, oak. Therefore, we 
 
 For Rowan, our model predicts `exp(3.0253-0.7376)`, therefore 9.6 mg of dry biomass per ant.
 
-For Sycamore, our model predicts `exp(3.0253-0.3670), therefore 14 mg of dry biomass per ant.
+For Sycamore, our model predicts `exp(3.0253-0.3670)`, therefore 14 mg of dry biomass per ant.
 
 #### Well done on making it up to here! This is the end of this tutorial.
 
