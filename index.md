@@ -101,7 +101,7 @@ ggsave(Food_tree_plot.png)  #saving the box plot as a png file
 ```
 As you can see from the box plot, it seems the food collection rate of ants is highest in oak trees, lowest in Rowan, and falls somewhere in between these two extremes in Sycamore trees. However, there is a lot of overlap in these results, and it is good to investigate this relationship in an analysis of variance (ANOVA).
 
-We can do this by creating a sinmple general linear model (an ANOVA assuming a linear relationship between independent and dependent variable)
+We can do this by creating a simple general linear model (an ANOVA assuming a linear relationship between independent and dependent variable)
 
 ```
 tree_food_mod1 <- lm(Food ~ Tree, data = ant_data) # modelling ant food collection as a response to tree species
