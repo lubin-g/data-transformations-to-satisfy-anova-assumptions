@@ -104,7 +104,7 @@ As you can see from the box plot, it seems the food collection rate of ants is h
 We can do this by creating a sinmple general linear model (an ANOVA assuming a linear relationship between independent and dependent variable)
 
 ```tree_food_mod1 <- lm(Food ~ Tree, data = ant_data) # modelling ant food collection as a response to tree species
-summary(tree_food_mod1) # obtaining the ANOVA results for our linear model```
+summary(tree_food_mod1) # obtaining the ANOVA results for our linear model
 ```
 
 Woah! Hold your horses! Before we have a look at our model results and draw any conclusions, we should make sure that our model is valid...That is, does it satisfy the assumptions of anova? Let's go over these assumptions and find out.
