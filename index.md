@@ -37,7 +37,6 @@ Created by Lubin Grosbuis - last updated by Lubin Grosbuis on 10/12/2021
 
 <a name="intro"></a>
 ## Introduction
-
 ---------------------------
 Welcome to this tutorial on testing anova assumptions and data transformations! In data science, we often want to build models of our data and carry out statistical tests to evaluate the effect of one or more explanatory variables on our dependent variable. However, models and statistical tests often make assumptions about our data, particularly regarding their distributions, and it is our job to ensure that these assumptions are met. When these assumptions are violated, it is often possible to apply transformations to our data so that the values contain the same information, but satisfy model and statistical test assumptions. We also sometimes have to work with data communicating the same information in different units, which makes comparing data unfeasible, like trying to compare apples and pears. Nevertheless, solutions exist, so that these can become comparable.
 
